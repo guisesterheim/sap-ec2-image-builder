@@ -2,7 +2,7 @@
 
 This Terraform + Ansible code helps you to create the Golden AMIs for using with your SAP projects. This project creates two Golden AMIs: RedHat Enterprise Linux (RHEL) and Oracle Enterprise Linux (OEL).
 
-![](diagrams/solution_flow.png)
+![](diagrams/solution.png)
 
 # How to update the Ansible code
 
