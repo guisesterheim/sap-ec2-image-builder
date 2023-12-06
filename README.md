@@ -79,5 +79,5 @@
 | base_ami (RHEL) | First base_ami is for RHEL | ami-01453fg90e53509e3 | 
 | base_ami (OEL) | Second base_ami is for OEL | ami-01453fg90e53509e3 | 
 
-
-- 3.5 - Run ```./run_terraform_plan.sh```
+- 3.6 - Run ```./run_terraform_plan.sh```
+- 3.7 - Check the resources you are about to create and then run ```./run_terraform_apply.sh```
