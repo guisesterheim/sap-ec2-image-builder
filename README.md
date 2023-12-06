@@ -16,7 +16,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 
 # Running the solution
 
-## 1 - Manual tasks for creating the base AMI for RHEL/SUSE/etc (any AMI from AWS Marketplace):
+### 1 - Manual tasks for creating the base AMI for RHEL/SUSE/etc (any AMI from AWS Marketplace):
 
 - 1.1. Subscribe to the RHEL AMI:
   - 1.1.1. Open "AWS Marketplace Solutions" on your AWS console.
@@ -48,7 +48,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
   - ![](readme_images/configure-1.png)
   - 1.3.5. Make sure the overall step 3 is complete by going back into the EC2 console, select your instance, and click Connect. If the tab "Session Manager" doesn't have any error and allows you to click "Connect", leading to a new tab with an SSH session into your instance, it means the SSM agent is correctly installed and you are ready for the automated steps.
 
-### IMPORTANT! Make sure to check your SSM installation using step 3.5. If the SSM Agent installation is not correctly done, the automated steps with EC2 Image Builder will not work!
+#### IMPORTANT! Make sure to check your SSM installation using step 3.5. If the SSM Agent installation is not correctly done, the automated steps with EC2 Image Builder will not work!
 
 - 1.4. Create your BASE AMI for EC2 Image Builder to use:
   - 1.4.1 - Now back on the EC2 console, select your instance, click "Actions", then "Image and templates", then "Create image".
@@ -71,7 +71,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
   - 1.5.1 - Delete the rhel-base instance used for capturing the AMI
   - 1.5.2 - Delete the security group created for SSHing into the instance (named launch-wizard-X)
 
-## 2 - Manual tasks for creating the base AMI for OEL (Oracle Enterprise Linux)
+### 2 - Manual tasks for creating the base AMI for OEL (Oracle Enterprise Linux)
 
 - 2.1. Find your base AMI in this blog post from Oracle: https://forums.oracle.com/ords/apexds/post/launch-an-oracle-linux-instance-in-aws-9462
 - 2.2. Once you find your AMI, on the list click "Launch instance from AMI"
@@ -79,7 +79,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 - 2.3. Use the same instructions on step 1.2.4 above up until the end
 - 2.4. After you are done creating your new AMI with the SSM Agent installed in it, for creating the new Parameter in Parameter Store (step 1.4.6 above), use the name ```/dev/ec2/amis/oel/base```
 
-## 3 - Running the automation to create the golden AMIs
+### 3 - Running the automation to create the golden AMIs
 
 - 3.1. Create an S3 bucket to save your Terraform states and save its name. How to create the bucket here: https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html
 - 3.2. Update the file ```run_terraform_init.sh``` in this repo changing the value for the variable "BUCKET_NAME" with your new bucket
