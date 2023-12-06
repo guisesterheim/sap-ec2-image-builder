@@ -94,3 +94,4 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 
 - 3.6 - Run ```./run_terraform_plan.sh``` and check the resources you are about to create
 - 3.7 - Run ```./run_terraform_apply.sh```
+- 3.8 - Once Terraform is done, your Golden AMI IDs will be available at EC2 > AMIs with a name prefixed with "Golden-AMI". Also, you can find them on the SSM Parameter Store under the names ```/dev/amis/golden/oel/sap-and-oracle``` and ```/dev/amis/golden/rhel/sap```
