@@ -51,17 +51,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
   - 1.4.1 - Now back on the EC2 console, select your instance, click "Actions", then "Image and templates", then "Create image".
   - 1.4.2 - Give it the name "rhel-base" and click "Create image".
   - 1.4.3 - Go to "AMIs" on the menu on the left, find your new AMI and wait for it to be on Status "Available".
-  - 1.4.4 - Copy the AMI ID
-  - 1.4.5 - Search for "SSM Parameter Store" in the top search bar and open it <br> ![](readme_images/parameter-1.png)
-  - 1.4.6 - Click "Create parameter" and fill in with:
-
-| Field | Value | Comment |
-| -- | -- | -- |
-| Name | /dev/ec2/amis/rhel/base | IMPORTANT! Use exactly this same name, as this will be read by the Terraform code that creates your EC2 Image Builder setup |
-| Value | Input your AMI ID copied from step 4.4 | |
-
- ![](readme_images/parameter-2.png)
-  - 4.7 - Click "Create Parameter"
+  - 1.4.4 - Copy the AMI ID and save it somewhere safe
 
 - 1.5. Clean up the resources
   - 1.5.1 - Delete the rhel-base instance used for capturing the AMI
