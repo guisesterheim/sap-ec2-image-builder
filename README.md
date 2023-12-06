@@ -1,3 +1,19 @@
+# The solution
+
+This Terraform + Ansible code helps you to create the Golden AMIs for using with your SAP projects. This project creates two Golden AMIs: RedHat Enterprise Linux (RHEL) and Oracle Enterprise Linux (OEL).
+
+![](diagrams/solution_flow.png)
+
+# How to update the Ansible code
+
+1. Make a copy/fork of this repository into your own one
+2. Make the required changes in the folder ```ansible```
+3. Push your code to your own repository
+4. Take a look at the file ```terraform/modules/ec2-image-builder/files/call_ansible_from_git.yaml```
+- 4.1. On line 24 you'll see it cloning this original repo from main branch. Update it to clone your own repository
+5. Run the Terraform solution
+5.1 If this is not the first version you are running Terraform, add a new entry on the dev.tfvars file under "versions" variable. This way you will create a new build and not discard the previous AMI(s) created
+
 # Running the solution
 
 ## 1 - Manual tasks for creating the base AMI for RHEL/SUSE/etc (any AMI from AWS Marketplace):
