@@ -21,7 +21,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 - 1.1. Subscribe to the RHEL AMI:
   - 1.1.1. Open "AWS Marketplace Solutions" on your AWS console.
   - 1.1.2. Navigate to "Discover Products" and search for "RHEL SAP"
-  - 1.1.3. Subscribe to the image named "Red Hat Enterprise Linux for SAP with HA and Update Services 8.2" <br> ![](readme_images/subscribe-1.png)
+  - 1.1.3. Subscribe to the image named "Red Hat Enterprise Linux for SAP with HA and Update Services 8.2" <br> ![](readme_images/marketplace-1.png)
 
 - 1.2. Launch an instance using your just subscribed image:
   - 1.2.1. Go to AWS Marketplace again and then "Manage subscriptions" on the left menu
