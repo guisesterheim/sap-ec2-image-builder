@@ -6,7 +6,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 
 # What is configured on the golden AMI
 
-1. Install several packages using YUM
+1. Install several packages using YUM: [](/ansible/golden_amis/roles/role-install-libs-pkgs-agents/defaults/main.yaml)
 2. Install AWS CLI
 3. Install AWS SAP Data Provider
 4. Install EFS Utils
