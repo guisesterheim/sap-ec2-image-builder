@@ -6,20 +6,15 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 
 # What is configured on the golden AMI
 
-1. Install several packages using YUM: [variables](/ansible/golden_amis/roles/role-install-libs-pkgs-agents/defaults/main.yaml)
-2. Install AWS CLI
-3. Install AWS SAP Data Provider
-4. Install EFS Utils
-5. Disable Firewall
-6. Set Clock Source
-7. Set Timezone
-8. Set UUIDD
-9. Disable core dump, KSM, and SELINUX
-10. Enable TSX
-11. Configure user limits for SAP
-12. Set general limits
-13. Set SAP conf and for tmp files
-14. Set tuned
+1. Install several packages using YUM: [link](/ansible/golden_amis/roles/role-install-libs-pkgs-agents/defaults/main.yaml)
+2. Install AWS CLI: [link](/ansible/golden_amis/roles/role-install-libs-pkgs-agents/tasks/common/check_aws_cli.yaml)
+3. Install AWS SAP Data Provider: [link](/ansible/golden_amis/roles/role-install-libs-pkgs-agents/tasks/rhel/install_data_provider_rhel.yaml)
+4. Install EFS Utils: [link](/ansible/golden_amis/roles/role-install-libs-pkgs-agents/tasks/rhel/install_efs_utils.yaml)
+5. Disable Firewall: [link](/ansible/golden_amis/roles/role-os-params/tasks/common/disable_firewall.yaml)
+6. Set Clock Source: [link](/ansible/golden_amis/roles/role-os-params/tasks/common/set_clocksource.yaml)
+7. Set Timezone: [link](/ansible/golden_amis/roles/role-os-params/tasks/common/set_timezone.yaml)
+8. Set UUIDD: [link](/ansible/golden_amis/roles/role-os-params/tasks/common/set_uuidd.yaml)
+9. Disable core dump, KSM, and SELINUX, enable TSX, Configure user limits for SAP, set general limits, set SAP conf and for tmp files, set tuned: [link](/ansible/golden_amis/roles/role-os-params/tasks/rhel/apply_rhel_specific_changes.yaml) and [link](/ansible/golden_amis/roles/role-os-params/tasks/oel/apply_oel_specific_changes.yaml) 
 
 # How to update the Ansible code
 
