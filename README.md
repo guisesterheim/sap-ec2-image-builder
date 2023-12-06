@@ -4,6 +4,23 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 
 ![](diagrams/solution.png)
 
+# What is configured on the golden AMI
+
+1. Install several packages using YUM
+2. Install AWS CLI
+3. Install AWS SAP Data Provider
+4. Install EFS Utils
+5. Disable Firewall
+6. Set Clock Source
+7. Set Timezone
+8. Set UUIDD
+9. Disable core dump, KSM, and SELINUX
+10. Enable TSX
+11. Configure user limits for SAP
+12. Set general limits
+13. Set SAP conf and for tmp files
+14. Set tuned
+
 # How to update the Ansible code
 
 1. Make a copy/fork of this repository into your own one
