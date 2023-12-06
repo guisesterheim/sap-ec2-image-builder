@@ -53,7 +53,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
   - 1.4.3 - Go to "AMIs" on the menu on the left, find your new AMI and wait for it to be on Status "Available".
   - 1.4.4 - Copy the AMI ID and save it somewhere safe
 
-- 1.5. Clean up the resources
+- 1.5. Clean up the resources:
   - 1.5.1 - Delete the rhel-base instance used for capturing the AMI
   - 1.5.2 - Delete the security group created for SSHing into the instance (named launch-wizard-X)
 
@@ -80,5 +80,5 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 | base_ami (RHEL) | First base_ami is for RHEL | ami-01453fg90e53509e3 | 
 | base_ami (OEL) | Second base_ami is for OEL | ami-01453fg90e53509e3 | 
 
-- 3.6 - Run ```./run_terraform_plan.sh```
-- 3.7 - Check the resources you are about to create and then run ```./run_terraform_apply.sh```
+- 3.6 - Run ```./run_terraform_plan.sh``` and check the resources you are about to create
+- 3.7 - Run ```./run_terraform_apply.sh```
