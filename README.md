@@ -34,7 +34,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 | Name | rhel-base | ![](readme_images/launch-2.png) |
 | Key pair name | any | Select one keypair you have access to (or create a new key pair and save it somewhere safe. You're going to need it to SSH into the instance) |
 | Allow SSH traffic from | My IP | Under network settings, select to create a new security group and allow SSH (port 22) via your IP only <br> ![](readme_images/launch-3.png) |
-| IAM instance profile | ssm-role | Under "Advanced details", click "Create new IAM profile" and follow the steps: 1. Click "Create Role". 2. Select "AWS Service". 3. Scroll down and select "EC2 Role for AWS Systems Manager". 4. Select next. 5. Select next. 6. Add "ssm-role" on the role name. 7. Select "Create role". Go back to the previous tab, hit refresh on the IAM instance profile and select your newly created "ssm-role".
+| IAM instance profile | ssm-role | Under "Advanced details", click "Create new IAM profile" and follow the steps: <br>1. Click "Create Role". <br>2. Select "AWS Service". <br>3. Scroll down and select "EC2 Role for AWS Systems Manager". <br>4. Select next. <br>5. Select next. <br>6. Add "ssm-role" on the role name. <br>7. Select "Create role". Go back to the previous tab, hit refresh on the IAM instance profile and select your newly created "ssm-role".
 
   - 1.2.5. Click "Launch instance"
 
