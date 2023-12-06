@@ -69,5 +69,15 @@
 - 3.2. Update the file ```run_terraform_init.sh``` in this repo changing the value for the variable "BUCKET_NAME" with your new bucket
 - 3.3. IMPORTANT: for productive environments, the run_terraform_init.sh should be updated to include a Dynamo DB table too. This prevents errors in the Terraform State file caused by multiple people trying to update it at the same time. More here: https://developer.hashicorp.com/terraform/language/settings/backends/s3
 - 3.4 - In a console, cd into the terraform folder and run ```./run_terraform_init.sh``` <br> ![](readme_images/terraform-1.png)
+- 3.5 - Rename the file dev.tfvars.template into dev.tfvars and replace the following values:
+
+| Variable | Comment | Sample value |
+| -- | -- | -- |
+| kms_key_arn | The KMS ARN you want to use. More on how to create keys: https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html | KMS ARN |
+| vpc_id | The VPC ID to deploy this solution into | vpc-136fg512a80503b82 | 
+| subnet_id | The Subnet ID to deploy this solution into | subnet-9efcd1og8f764b86f | 
+| base_ami (RHEL) | First base_ami is for RHEL | ami-01453fg90e53509e3 | 
+| base_ami (OEL) | Second base_ami is for OEL | ami-01453fg90e53509e3 | 
+
 
 - 3.5 - Run ```./run_terraform_plan.sh```

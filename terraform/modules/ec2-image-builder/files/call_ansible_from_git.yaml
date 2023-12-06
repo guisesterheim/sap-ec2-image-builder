@@ -13,10 +13,8 @@ phases:
             -   sudo dnf install -y epel-release
             -   sudo dnf install -y git ansible
             - else
-            -   sudo yum install -y git ansible-core
+            -   sudo yum install -y git ansible
             - fi
-            - sudo ansible-galaxy collection install community.general
-            - sudo ansible-galaxy collection install ansible.posix
       - name: DownloadPlaybook
         action: ExecuteBash
         inputs:

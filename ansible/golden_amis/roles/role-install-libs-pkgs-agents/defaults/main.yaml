@@ -60,7 +60,6 @@ rhel_8_8_packages:
   - git
   - rpm-build
   - make
-  - ansible-core
   - gtk2
   - krb5-libs
   - openssl
@@ -69,7 +68,6 @@ rhel_8_8_packages:
   - cairo
   - xterm
   - xhost
-  - xorg-x11-apps
 
 rhel_group_packages:
   - "@Server"
