@@ -1,5 +1,5 @@
 resource "aws_imagebuilder_distribution_configuration" "this" {
-  name        = "itsre-${var.environment}-${var.operating_system}-local-distribution"
+  name        = "${var.environment}-${var.operating_system}-local-distribution"
   description = "Distribution config for when an AMI is built"
 
   distribution {
@@ -13,8 +13,6 @@ resource "aws_imagebuilder_distribution_configuration" "this" {
       var.tags)
 
       name = "Golden-AMI-${var.operating_system}-{{ imagebuilder:buildDate }}"
-
-      target_account_ids = var.target_account_ids
     }
     region = var.aws_region
   }

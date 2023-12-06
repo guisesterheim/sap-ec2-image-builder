@@ -1,7 +1,7 @@
 locals {
-  iam_instance_role_name    = "iamrole-itsre-${var.environment}-ec2-image-builder"
-  iam_instance_profile_name = "iamprofile-itsre-${var.environment}-ec2-image-builder"
-  iam_policy_name           = "iampolicy-itsre-${var.environment}-ec2-image-builder"
+  iam_instance_role_name    = "iamrole-${var.environment}-ec2-image-builder"
+  iam_instance_profile_name = "iamprofile-${var.environment}-ec2-image-builder"
+  iam_policy_name           = "iampolicy-${var.environment}-ec2-image-builder"
 }
 
 resource "aws_iam_role" "iam_role" {

@@ -1,16 +1,12 @@
 locals {
   tags = {
-    "ProjectID"  = "XXXXX"
-    "CostCenter" = "itsre"
+    "ProjectID"  = "1234"
+    "ProjectDescription"  = "SAP Golden AMIs"
+    "CostCenter" = "cost"
     "Product"    = var.app_name
-    "Owner"      = "retail-IT"
-    "EnvType"    = var.environment
+    "Owner"      = "IT"
+    "Environment"    = var.environment
     "ManagedBy"  = "Terraform"
-    "GitHubRepo" = "https://gitlab.aws.dev/sesterhg/bell-retail-infra"
-  }
-
-  available_amis = {
-    "rhel_8.8_sap" = data.aws_ssm_parameter.ami_id_redhat.value
-    "oel_8.8_sap"  = data.aws_ssm_parameter.ami_id_oracle_linux.value
+    "GitHubRepo" = "https://github.com/guisesterheim/sap-ec2-image-builder"
   }
 }

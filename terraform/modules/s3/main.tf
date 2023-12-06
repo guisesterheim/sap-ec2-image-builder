@@ -1,8 +1,8 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "itsre-${lower(var.environment)}-bell-${var.bucket_name}"
+  bucket = "${lower(var.environment)}-${var.bucket_name}"
 
   tags = merge(var.tags, {
-    Name        = "itsre-${lower(var.environment)}-bell-${var.bucket_name}"
+    Name        = "${lower(var.environment)}-${var.bucket_name}"
     Environment = "${var.environment}"
   })
 }
@@ -18,7 +18,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "encryption" {
   }
 }
 
-resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
+resource "aws_s3_bucket_policy" "disable_non_https" {
   bucket = aws_s3_bucket.bucket.id
   policy = data.aws_iam_policy_document.disable_non_https.json
 }

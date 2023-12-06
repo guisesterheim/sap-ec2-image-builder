@@ -58,11 +58,6 @@ variable "tags" {
   type        = map(string)
 }
 
-variable "target_account_ids" {
-  description = "Target AWS Account IDs to distribute the image"
-  type        = list(string)
-}
-
 variable "versions" {
   description = "Versions of the AMI to create"
   type        = map(string)

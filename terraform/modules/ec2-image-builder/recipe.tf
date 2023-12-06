@@ -1,7 +1,7 @@
 resource "aws_imagebuilder_image_recipe" "this" {
   for_each = var.versions
 
-  name         = "itsre-${var.environment}-${var.operating_system}-AMI-recipe"
+  name         = "${var.environment}-${var.operating_system}-AMI-recipe"
   parent_image = var.base_ami
   version      = each.value
 
