@@ -26,8 +26,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 - 1.2. Launch an instance using your just subscribed image:
   - 1.2.1. Go to AWS Marketplace again and then "Manage subscriptions" on the left menu
   - 1.2.2. Select the RHEL image you just subscribed
-  - 1.2.3. Select "continue to launch through EC2"
-  - ![](readme_images/launch-1.png)
+  - 1.2.3. Select "continue to launch through EC2" <br> ![](readme_images/launch-1.png)
   - 1.2.4. The parameters you have to fill in are (all the rest you can leave as default):
 
 | Field | Suggested value | Comment |
@@ -43,8 +42,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
   - 1.3.1. Now back to the EC2 console, select your new instance and click "Connect".
   - 1.3.2. Switch to "SSH client" tab and copy the example string at the botton. It will be something like this: ```ssh -i "ec2.pem" ec2-user@ec2-54-166-251-188.compute-1.amazonaws.com```. Fix the path for your keypair (created on item 2.4 line one), paste it in a terminal and hit enter.
   - 1.3.3. Once you're inside your new instance, run the following command: ```sudo dnf install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm``` (more details available here: https://docs.aws.amazon.com/systems-manager/latest/userguide/agent-install-rhel-8-9.html)
-  - 1.3.4. Run ```sudo service amazon-ssm-agent status``` to make sure your service is "active" and there are no error logs in the agent.
-  - ![](readme_images/configure-1.png)
+  - 1.3.4. Run ```sudo service amazon-ssm-agent status``` to make sure your service is "active" and there are no error logs in the agent. <br> ![](readme_images/configure-1.png)
   - 1.3.5. Make sure the overall step 3 is complete by going back into the EC2 console, select your instance, and click Connect. If the tab "Session Manager" doesn't have any error and allows you to click "Connect", leading to a new tab with an SSH session into your instance, it means the SSM agent is correctly installed and you are ready for the automated steps.
 
 #### IMPORTANT! Make sure to check your SSM installation using step 3.5. If the SSM Agent installation is not correctly done, the automated steps with EC2 Image Builder will not work!
@@ -54,8 +52,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
   - 1.4.2 - Give it the name "rhel-base" and click "Create image".
   - 1.4.3 - Go to "AMIs" on the menu on the left, find your new AMI and wait for it to be on Status "Available".
   - 1.4.4 - Copy the AMI ID
-  - 1.4.5 - Search for "SSM Parameter Store" in the top search bar and open it
-  - ![](readme_images/parameter-1.png)
+  - 1.4.5 - Search for "SSM Parameter Store" in the top search bar and open it <br> ![](readme_images/parameter-1.png)
   - 1.4.6 - Click "Create parameter" and fill in with:
 
 | Field | Value | Comment |
@@ -63,7 +60,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 | Name | /dev/ec2/amis/rhel/base | IMPORTANT! Use exactly this same name, as this will be read by the Terraform code that creates your EC2 Image Builder setup |
 | Value | Input your AMI ID copied from step 4.4 | |
 
-  - ![](readme_images/parameter-2.png)
+ ![](readme_images/parameter-2.png)
   - 4.7 - Click "Create Parameter"
 
 - 1.5. Clean up the resources
@@ -73,8 +70,7 @@ This Terraform + Ansible code helps you to create the Golden AMIs for using with
 ### 2 - Manual tasks for creating the base AMI for OEL (Oracle Enterprise Linux)
 
 - 2.1. Find your base AMI in this blog post from Oracle: https://forums.oracle.com/ords/apexds/post/launch-an-oracle-linux-instance-in-aws-9462
-- 2.2. Once you find your AMI, on the list click "Launch instance from AMI"
-- ![](readme_images/launch-4.png)
+- 2.2. Once you find your AMI, on the list click "Launch instance from AMI" <br> ![](readme_images/launch-4.png)
 - 2.3. Use the same instructions on step 1.2.4 above up until the end
 - 2.4. After you are done creating your new AMI with the SSM Agent installed in it, for creating the new Parameter in Parameter Store (step 1.4.6 above), use the name ```/dev/ec2/amis/oel/base```
 
